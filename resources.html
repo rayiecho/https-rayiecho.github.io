@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/jpeg" href="https://rayiecho.github.io/images/hero1.jpeg">
+
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="7ofdGTC_OqlVDsJbG-TB5b3_7v2khuOOWbzYgRZqpsM">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free mentee resource hub from Regan Ayiecho — practical guides on finding legitimate scholarships, writing standout essays, university applications, career readiness and using AI without losing real skill.">
+  <meta name="keywords" content="scholarship guide Africa, scholarship essay tips, university application guidance, career readiness Africa, internships Africa, AI skills students, Mastercard Foundation Scholarship, mentee resources, Jua Institute">
+  <meta name="robots" content="index, follow">
+  <title>Regan Ayiecho | Mentee Resource Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#EDF4EE;--bg2:#DDEEDE;--bg3:#D4EAD6;--burgundy:#1B4332;--burgundy-light:#2D6A4F;--terracotta:#2E7D52;--terracotta-light:#52B788;--gold:#C0392B;--gold-light:#E74C3C;--cream:#0D1F0F;--cream2:#1A3320;--gray:#2E5035;--white:#FAFAF8;--border:rgba(46,125,82,0.2);--border2:rgba(46,125,82,0.08);}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Outfit',sans-serif;background:#EDF4EE;color:var(--cream);overflow-x:hidden;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 3rem;display:flex;justify-content:space-between;align-items:center;background:rgba(5,15,8,0.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--border2);}
+    .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:700;color:var(--gold);letter-spacing:0.5px;text-decoration:none;}
+    .nav-links{display:flex;gap:2.5rem;list-style:none;}
+    .nav-links a{color:#FFFFFF;text-decoration:none;font-size:0.9rem;font-weight:600;letter-spacing:0.5px;transition:color 0.3s;}
+    .nav-links a:hover,.nav-links a.active{color:#FFD700;text-decoration:underline;}
+    .nav-cta{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:0.5rem 1.25rem;border-radius:2px;font-size:0.82rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:all 0.3s;}
+    .nav-cta:hover{background:var(--gold);color:var(--bg);}
+
+    /* PAGE HERO */
+    .page-hero{
+      background: url('images/hero2.jpeg') center center / cover no-repeat;
+      padding:9rem 3rem 5rem;
+      border-bottom:1px solid var(--border2);
+      position: relative;
+    }
+    .page-hero::before{
+      content:'';
+      position:absolute;inset:0;
+      background: linear-gradient(to right, rgba(5,15,8,0.80) 0%, rgba(5,15,8,0.65) 50%, rgba(5,15,8,0.35) 100%);
+    }
+    .page-hero-inner{position:relative;z-index:1;}
+    .page-hero-inner{max-width:1300px;margin:0 auto;}
+    .section-label{font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;color:#E8C97A;font-weight:600;display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;}
+    .section-label::before{content:'';display:block;width:30px;height:1px;background:var(--gold);}
+    .page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:700;color:#FFFFFF !important;line-height:1.05;text-shadow:0 3px 25px rgba(0,0,0,0.95);}
+    .page-hero h1 span{color:#FFD700 !important;text-shadow:0 2px 20px rgba(0,0,0,0.95);}
+    .page-hero-sub{font-size:1.05rem;color:#FFFFFF !important;font-weight:600;margin-top:1rem;max-width:640px;line-height:1.9;text-shadow:0 2px 20px rgba(0,0,0,0.95);}
+    .btn-primary{background:var(--gold);color:var(--bg);padding:0.85rem 2rem;font-size:0.85rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all 0.3s;display:inline-block;}
+    .btn-primary:hover{background:var(--terracotta);color:#0A1A0C;}
+
+    /* TICKER */
+    .ticker {
+      background: var(--burgundy);
+      padding: 0.85rem 0;
+      overflow: hidden; white-space: nowrap;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .ticker-inner {
+      display: inline-block;
+      animation: ticker 30s linear infinite;
+    }
+    .ticker-inner span {
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: #F4F1E8;
+      padding: 0 2.5rem;
+    }
+    .ticker-dot {
+      color: #C0392B; font-size: 0.5rem;
+      vertical-align: middle;
+    }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* CATEGORY NAV */
+    .category-nav{background:var(--bg2);border-bottom:1px solid var(--border2);padding:1.75rem 3rem;}
+    .category-nav-inner{max-width:1300px;margin:0 auto;display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;}
+    .category-pill{border:1px solid var(--border);color:var(--cream);background:transparent;padding:0.65rem 1.5rem;border-radius:2px;font-size:0.76rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:all 0.3s;}
+    .category-pill:hover{background:var(--gold);border-color:var(--gold);color:var(--bg);}
+
+    /* RESOURCE SECTIONS */
+    .resource-section{padding:6rem 3rem;max-width:1300px;margin:0 auto;border-bottom:1px solid var(--border2);}
+    .resource-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#0A1A0C;margin-top:0.75rem;margin-bottom:3rem;}
+
+    /* GUIDE CARDS */
+    .guide-card{padding:2.75rem 0;border-top:1px solid var(--border2);}
+    .guide-card:first-of-type{border-top:none;padding-top:0;}
+    .guide-title{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;color:#0A1A0C;margin-bottom:1.25rem;line-height:1.25;}
+    .guide-subhead{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:#0A1A0C;margin:2rem 0 1rem;}
+    .story-text{font-size:0.95rem;line-height:1.9;color:#2E5035;margin-bottom:1.25rem;}
+    .story-text strong{color:var(--cream);font-weight:600;}
+    .guide-list{margin:0 0 1.25rem 1.5rem;}
+    .guide-list li{font-size:0.95rem;line-height:1.9;color:#2E5035;margin-bottom:0.6rem;}
+    .guide-list li strong{color:var(--cream);font-weight:600;}
+    .guide-list .guide-list{margin-top:0.5rem;}
+
+    /* AFFIDAVIT BOX */
+    .affidavit-box{background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:1.5rem;margin:1.25rem 0 0.75rem;overflow-x:auto;}
+    .affidavit-box pre{font-family:'Courier New',monospace;font-size:0.8rem;line-height:1.7;color:var(--cream);white-space:pre-wrap;}
+
+    /* TABLE */
+    .resource-table{width:100%;border-collapse:collapse;margin:1.25rem 0 1.5rem;font-size:0.88rem;min-width:520px;}
+    .resource-table th{background:var(--bg2);color:var(--cream);text-align:left;padding:0.75rem 1rem;font-weight:600;font-size:0.76rem;letter-spacing:1px;text-transform:uppercase;border:1px solid var(--border2);}
+    .resource-table td{padding:0.75rem 1rem;border:1px solid var(--border2);color:#2E5035;}
+
+    /* WEAK / STRONG EXAMPLES */
+    .example-weak{border-left:3px solid var(--gold-light);background:rgba(231,76,60,0.05);padding:1.25rem 1.5rem;margin:1rem 0 0.5rem;border-radius:0 4px 4px 0;}
+    .example-weak p{font-size:0.92rem;line-height:1.8;color:#2E5035;}
+    .example-strong{border-left:3px solid var(--terracotta-light);background:rgba(82,183,136,0.08);padding:1.25rem 1.5rem;margin:1rem 0 0.5rem;border-radius:0 4px 4px 0;}
+    .example-strong p{font-size:0.92rem;line-height:1.8;color:#2E5035;}
+    .example-note{font-size:0.83rem;font-style:italic;color:var(--terracotta);margin:0 0 1.5rem;line-height:1.7;}
+
+    /* CALLOUT BOX */
+    .callout-box{background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:1.5rem 2rem;margin-top:1.75rem;}
+    .callout-box p{font-size:0.92rem;color:#2E5035;line-height:1.8;}
+    .callout-box a{color:var(--gold);font-weight:600;text-decoration:underline;}
+
+    /* CTA */
+    .cta{background:var(--bg3);border-top:1px solid var(--border2);padding:5rem 3rem;text-align:center;}
+    .cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:700;color:#0A1A0C;margin-bottom:1rem;}
+    .cta p{font-size:0.95rem;color:#2E5035;max-width:500px;margin:0 auto 2rem;line-height:1.8;}
+    .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+
+    /* SOCIAL */
+    .social-strip{background:var(--bg2);border-top:1px solid var(--border2);padding:1.5rem 3rem;}
+    .social-strip-inner{max-width:1300px;margin:0 auto;display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;}
+    .social-link{display:flex;align-items:center;gap:0.6rem;color:#2E5035;text-decoration:none;font-size:0.8rem;font-weight:500;transition:color 0.3s;letter-spacing:0.5px;}
+    .social-link:hover{color:var(--gold);}
+    .social-link svg{width:16px;height:16px;fill:currentColor;flex-shrink:0;}
+
+    /* FOOTER */
+    footer{background:#EDF4EE;padding:3rem;border-top:1px solid var(--border2);}
+    .footer-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:2rem;}
+    .footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--gold);}
+    .footer-tagline{font-size:0.78rem;color:#2E5035;margin-top:0.25rem;}
+    .footer-links{display:flex;gap:2rem;flex-wrap:wrap;}
+    .footer-links a{font-size:0.8rem;color:#2E5035;text-decoration:none;transition:color 0.3s;}
+    .footer-links a:hover{color:var(--gold);}
+    .footer-bottom{max-width:1300px;margin:2rem auto 0;padding-top:1.5rem;border-top:1px solid var(--border2);display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;color:#4A7050;}
+
+    @media(max-width:1024px){.resource-table{min-width:0;}}
+    @media(max-width:768px){nav{padding:1rem 1.5rem;}.nav-links,.nav-cta{display:none;}.resource-section,.cta{padding:4rem 1.5rem;}.category-nav{padding:1.25rem 1.5rem;}.footer-inner{grid-template-columns:1fr;}.guide-title{font-size:1.4rem;}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo" style="display:flex;align-items:center;gap:10px;"><img src="images/hero1.jpeg" alt="Regan Ayiecho" style="width:36px;height:36px;border-radius:50%;object-fit:cover;object-position:center 15%;border:2px solid #C0392B;flex-shrink:0;">Regan Ayiecho</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="resources.html" class="active">Resources</a></li>
+    <li><a href="company.html">Docs</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="media.html">Media</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Hire Me</a>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="section-label">Free Resources</div>
+    <h1>Mentee<br><span>Resource Hub</span></h1>
+    <p class="page-hero-sub">Real guides on scholarships, university applications, career readiness, and using AI without losing real skill &mdash; written from experience, free for anyone who needs them.</p>
+  </div>
+</div>
+
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>Software Engineering</span><span class="ticker-dot">&bull;</span>
+    <span>Young Africans Network</span><span class="ticker-dot">&bull;</span>
+    <span>AfriVid Studio</span><span class="ticker-dot">&bull;</span>
+    <span>Jua Institute</span><span class="ticker-dot">&bull;</span>
+    <span>Mastercard Foundation Scholar</span><span class="ticker-dot">&bull;</span>
+    <span>ALU Kigali</span><span class="ticker-dot">&bull;</span>
+    <span>AI Specialist</span><span class="ticker-dot">&bull;</span>
+    <span>Building for Africa</span><span class="ticker-dot">&bull;</span>
+    <span>Kisumu &rarr; Kigali</span><span class="ticker-dot">&bull;</span>
+    <span>Software Engineering</span><span class="ticker-dot">&bull;</span>
+    <span>Young Africans Network</span><span class="ticker-dot">&bull;</span>
+    <span>AfriVid Studio</span><span class="ticker-dot">&bull;</span>
+    <span>Jua Institute</span><span class="ticker-dot">&bull;</span>
+    <span>Mastercard Foundation Scholar</span><span class="ticker-dot">&bull;</span>
+    <span>ALU Kigali</span><span class="ticker-dot">&bull;</span>
+    <span>AI Specialist</span><span class="ticker-dot">&bull;</span>
+    <span>Building for Africa</span><span class="ticker-dot">&bull;</span>
+    <span>Kisumu &rarr; Kigali</span><span class="ticker-dot">&bull;</span>
+  </div>
+</div>
+
+<div class="category-nav">
+  <div class="category-nav-inner">
+    <a href="#scholarships" class="category-pill">Scholarships</a>
+    <a href="#university" class="category-pill">University &amp; Application Guidance</a>
+    <a href="#career" class="category-pill">Career &amp; Job Readiness</a>
+    <a href="#ai-skills" class="category-pill">AI-Era Skills</a>
+  </div>
+</div>
+
+<div class="resource-section" id="scholarships">
+  <div class="section-label">Scholarships</div>
+  <h2 class="resource-heading">Scholarships</h2>
+
+  <div class="guide-card" id="finding-scholarships">
+    <h3 class="guide-title">Finding Legitimate Scholarship Opportunities</h3>
+    <p class="story-text">I found the scholarship that changed my life while cleaning a building &mdash; not searching a database. That&rsquo;s the first thing I want you to understand: opportunities are rarely where you expect them, and legitimacy matters more than volume. Here&rsquo;s how to actually find real ones, and avoid the scams that target young Africans specifically.</p>
+    <ol class="guide-list">
+      <li><strong>Start with institutions, not search engines.</strong> Instead of googling &ldquo;scholarships for African students&rdquo; (which surfaces scam sites and outdated listings), go directly to: university financial aid / international admissions pages, named foundation websites, government scholarship portals for your target country. A legitimate scholarship almost always has an official .org, .edu, or government domain &mdash; not a generic site full of ads.</li>
+      <li><strong>Know the red flags of a scam.</strong>
+        <ul class="guide-list">
+          <li>Any scholarship that asks you to pay an &ldquo;application fee&rdquo; or &ldquo;processing fee.&rdquo; Real, major scholarships never require payment to apply.</li>
+          <li>Vague eligibility (&ldquo;open to all Africans&rdquo;) with no clear selection criteria.</li>
+          <li>Urgency pressure (&ldquo;apply in the next 24 hours or lose your spot&rdquo;).</li>
+          <li>Contact only through WhatsApp/personal email, with no official institutional page.</li>
+        </ul>
+      </li>
+      <li><strong>Build a personal shortlist, not a mass application list.</strong> Applying to 30 scholarships badly is weaker than applying to 5 well. For each opportunity, check:
+        <ul class="guide-list">
+          <li>Do you meet every stated eligibility requirement, not just most?</li>
+          <li>Does the scholarship&rsquo;s focus area genuinely match your goals?</li>
+          <li>Is the selection process merit-based, need-based, or both?</li>
+        </ul>
+      </li>
+      <li><strong>Reputable places to actually start looking.</strong>
+        <ul class="guide-list">
+          <li><strong>Mastercard Foundation Scholars Program</strong> &mdash; partners with universities across Africa and abroad, covers full tuition and living costs for academically talented students facing financial barriers.</li>
+          <li><strong>African Leadership University (ALU) Scholarships</strong> &mdash; merit and need-based options for students across Africa.</li>
+          <li><strong>Mandela Rhodes Foundation</strong> &mdash; postgraduate scholarships for African leaders, hosted in South Africa.</li>
+          <li><strong>DAAD (German Academic Exchange Service)</strong> &mdash; scholarships for African students to study in Germany, at all levels.</li>
+          <li><strong>Chevening Scholarships</strong> &mdash; UK government-funded scholarships for future leaders worldwide, including across Africa.</li>
+          <li><strong>Mastercard Foundation partner universities&rsquo; own portals</strong> &mdash; many list scholarship openings directly, often before they appear elsewhere.</li>
+        </ul>
+        <p class="story-text" style="margin-top:0.75rem;">Always verify current details on the organization&rsquo;s own official website before applying &mdash; programs, deadlines, and requirements can change year to year.</p>
+      </li>
+      <li><strong>The part nobody tells you: applying is only half the work.</strong> Most people don&rsquo;t fail scholarships because they weren&rsquo;t qualified &mdash; they fail because they stopped midway through a long application. If you start one, finish it. Set a personal deadline earlier than the real one, and find one person &mdash; a mentor, teacher, or peer &mdash; who will check in on your progress before the deadline, not just when it&rsquo;s already too late.</li>
+    </ol>
+  </div>
+
+  <div class="guide-card" id="scholarship-essay">
+    <h3 class="guide-title">Writing an Outstanding Scholarship Essay / Personal Statement</h3>
+    <p class="story-text">Every scholarship committee reads hundreds, sometimes thousands, of essays that all say the same thing: &ldquo;I&rsquo;ve always been passionate about helping my community.&rdquo; That sentence, in some form, kills more applications than weak grades ever do. Here&rsquo;s how to actually write one that gets remembered.</p>
+    <ol class="guide-list">
+      <li><strong>Start with a specific moment, not a general statement.</strong> Don&rsquo;t open with &ldquo;Since I was young, I have always wanted to...&rdquo; Open with one real, specific scene &mdash; a moment, a conversation, a decision &mdash; that a reader can actually picture. Specificity is what separates a memorable essay from a forgettable one.</li>
+      <li><strong>Answer the real question behind the question.</strong> &ldquo;Why do you deserve this scholarship?&rdquo; is really asking: what will you do with this opportunity that justifies choosing you over someone else? Show the throughline between the problem you&rsquo;re trying to solve and how this specific scholarship gets you closer to solving it.</li>
+      <li><strong>Show, don&rsquo;t summarize.</strong> Weak: &ldquo;I am a hardworking and determined person.&rdquo; Strong: describe a specific situation where hard work and determination were actually tested, and let the reader draw that conclusion themselves.</li>
+      <li><strong>Every sentence should do one of two jobs.</strong> Either it reveals something true and specific about who you are, or it moves your argument for why you deserve this opportunity forward. If a sentence does neither, cut it.</li>
+      <li><strong>Address weaknesses honestly, briefly, and forward-facing.</strong> If there&rsquo;s a gap in your grades, an unusual path, or something a reader might question, name it in one sentence, then pivot immediately to what you did about it or learned from it.</li>
+      <li><strong>Get real feedback, not just compliments.</strong> Ask someone to tell you what&rsquo;s confusing, boring, or unconvincing &mdash; not just &ldquo;does this sound good?&rdquo;</li>
+      <li><strong>Cut it down after you&rsquo;re &ldquo;done.&rdquo;</strong> Your first full draft is almost always too long. Cut 10-15% after you think you&rsquo;re finished. It almost always gets stronger, not weaker.</li>
+    </ol>
+
+    <h4 class="guide-subhead">Example: Weak vs. Strong Opening</h4>
+    <div class="example-weak">
+      <p><strong>WEAK:</strong> &ldquo;Since I was a young child, I have always been passionate about technology and helping my community. Growing up in Kenya, I faced many challenges, but I never gave up. I believe that education is the key to unlocking Africa&rsquo;s potential, and I am determined to use my skills to make a difference.&rdquo;</p>
+    </div>
+    <p class="example-note">What&rsquo;s wrong with it: Every sentence is a general claim with no evidence behind it. This paragraph could be submitted by thousands of different applicants without changing a word.</p>
+    <div class="example-strong">
+      <p><strong>STRONG:</strong> &ldquo;The laptop I used to build my first website belonged to someone else. I borrowed it for two hours every evening after the library closed, sitting on the concrete steps outside because the guard let me stay until 8pm if I was quiet. I didn&rsquo;t own a computer until I was nineteen. By then, I had already built three websites for small businesses in my neighborhood &mdash; for free, because the point was never the money. It was proving to myself that not owning something doesn&rsquo;t mean you can&rsquo;t build with it.&rdquo;</p>
+    </div>
+    <p class="example-note">What makes it work: Specific details make it unmistakably one person&rsquo;s real story. It shows determination through action, not adjectives.</p>
+
+    <h4 class="guide-subhead">Example: Weak vs. Strong Way to Address a Weakness</h4>
+    <div class="example-weak">
+      <p><strong>WEAK:</strong> &ldquo;I know my grades in my first year of secondary school were not very good. This was because I was going through a difficult time at home and I did not have anyone to help me with my studies. I want the committee to understand that this does not reflect who I really am as a student, and I have worked very hard to improve since then. I hope you will look past this and consider my application based on my true potential.&rdquo;</p>
+    </div>
+    <p class="example-note">What&rsquo;s wrong with it: Spends four sentences justifying and asking for sympathy before ever stating what actually changed.</p>
+    <div class="example-strong">
+      <p><strong>STRONG:</strong> &ldquo;My first-year grades dropped sharply after my father lost his job. For a while, school felt secondary to what was happening at home. What changed wasn&rsquo;t the situation &mdash; it was learning to study in unpredictable conditions instead of waiting for stable ones. By my final year, I had moved from a C average to consistently scoring A&rsquo;s in Mathematics and Physics, the two subjects I&rsquo;d struggled with most. That shift matters more to me than the grades themselves: it&rsquo;s proof I can perform under pressure, not just when conditions are ideal.&rdquo;</p>
+    </div>
+    <p class="example-note">What makes it work: Names the weakness in one sentence, pivots immediately to a specific, measurable outcome, and reframes the weakness as evidence of a strength the committee cares about.</p>
+  </div>
+
+  <div class="guide-card" id="scholarship-checklist">
+    <h3 class="guide-title">Complete Scholarship Application Checklist &amp; Required Documents</h3>
+
+    <h4 class="guide-subhead">Part 1: The Full Application Process, Step by Step</h4>
+    <ol class="guide-list">
+      <li>Research and shortlist &mdash; confirm you meet every eligibility requirement before investing time.</li>
+      <li>Read the requirements list twice &mdash; once for what&rsquo;s asked, once for the exact format each document must be in.</li>
+      <li>Request documents that take time first &mdash; recommendation letters, chief&rsquo;s/area letters, transcripts.</li>
+      <li>Gather your financial documentation (see Part 3 below).</li>
+      <li>Write your personal statement/essay (see the essay-writing guide above).</li>
+      <li>Get 2-3 people to review everything &mdash; people who will tell you what&rsquo;s missing, not just say &ldquo;looks good.&rdquo;</li>
+      <li>Fill in the application form carefully &mdash; cross-check every number and date against your actual documents.</li>
+      <li>Compile documents in the exact order requested.</li>
+      <li>Submit at least 3 days before the deadline.</li>
+      <li>Save proof of submission &mdash; screenshot the confirmation page, save the confirmation email.</li>
+      <li>Prepare for a possible interview &mdash; have your story and reasoning ready to speak, not just written.</li>
+    </ol>
+
+    <h4 class="guide-subhead">Part 2: Commonly Required Documents (Checklist)</h4>
+    <ul class="guide-list">
+      <li>National ID or birth certificate</li>
+      <li>Academic transcripts/certificates (certified copies where required)</li>
+      <li>Passport (for international/study-abroad scholarships)</li>
+      <li>Passport-size photos (check exact size/background requirements)</li>
+      <li>Personal statement / essay</li>
+      <li>2-3 recommendation letters</li>
+      <li>Affidavit of financial income/support (sample below)</li>
+      <li>Recent payslips or bank statements (if a parent/guardian is formally employed)</li>
+      <li>Introduction/support letter from local administration (e.g., in Kenya: chief&rsquo;s or assistant chief&rsquo;s letter)</li>
+      <li>Current school fee structure/statement</li>
+      <li>Medical certificate (occasionally required)</li>
+      <li>Any existing sponsorship or support letters</li>
+    </ul>
+
+    <h4 class="guide-subhead">Sample: Affidavit of Income and Financial Support</h4>
+    <div class="affidavit-box">
+      <pre>AFFIDAVIT OF INCOME AND FINANCIAL SUPPORT
+
+I, __________________________ [Full Name], of ID/Passport Number
+__________________, residing at __________________ [Location], do
+hereby swear/affirm as follows:
+
+1. That I am the parent/guardian of __________________ [Applicant's
+   Full Name], applicant for the __________________ [Scholarship Name].
+2. That my current occupation is __________________, and my average
+   monthly income from this occupation is KES/USD __________________.
+3. That my average annual income, including all sources (formal
+   employment, business, farming, remittances), is KES/USD
+   __________________.
+4. That I have __________ dependents currently relying on this income,
+   including the applicant.
+5. That this declaration is true and accurate to the best of my
+   knowledge, and I am aware that any false statement made herein is
+   punishable by law.
+
+Sworn/declared at __________________ this _____ day of
+_____________, 20___.
+
+Deponent's Signature: __________________
+Before me, Commissioner for Oaths / Notary Public: __________________
+(Official stamp and signature)</pre>
+    </div>
+    <p class="example-note">Note: Always check if the specific scholarship provides its own required affidavit template first, since some committees reject generic ones.</p>
+
+    <h4 class="guide-subhead">Part 3: Where Most People Fail &mdash; Income Calculations</h4>
+    <ol class="guide-list">
+      <li><strong>Confusing gross income with net income.</strong> Gross income is total earnings before deductions (tax, NHIF, NSSF, loan repayments). Net income is what&rsquo;s actually received after deductions. Most financial aid forms ask for gross income unless stated otherwise.</li>
+      <li><strong>Incorrectly converting monthly to annual (or the reverse).</strong> If income is steady month to month: Annual income = Monthly income &times; 12 (Example: KES 15,000/month &times; 12 = KES 180,000/year). If income is irregular (common for farmers, business owners, casual laborers): Add up total actual earnings across the full year, then divide by 12 for an average monthly figure (Example: If total farm income across the year was KES 96,000, average monthly = KES 96,000 &divide; 12 = KES 8,000/month).</li>
+      <li><strong>Forgetting to include all income sources.</strong> Forms typically ask for total household income, not just one person&rsquo;s formal salary &mdash; omitting sources (even unintentionally) can look like inconsistency if later cross-checked against bank statements.</li>
+      <li><strong>Not accounting for multiple dependents correctly.</strong> A form may ask for income per dependent (income &divide; number of people relying on it). Only calculate this when specifically asked.</li>
+      <li><strong>Providing round, unsupported estimates.</strong> Precision paired with documentation builds more trust than a suspiciously round number with nothing behind it.</li>
+    </ol>
+
+    <h4 class="guide-subhead">Quick Reference Table</h4>
+    <div style="overflow-x:auto;">
+    <table class="resource-table">
+      <thead>
+        <tr><th>You have</th><th>You need</th><th>Formula</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Steady monthly income</td><td>Annual income</td><td>Monthly &times; 12</td></tr>
+        <tr><td>Irregular yearly total</td><td>Average monthly income</td><td>Annual total &divide; 12</td></tr>
+        <tr><td>Multiple income sources</td><td>Total household income</td><td>Sum of all sources (kept consistent)</td></tr>
+        <tr><td>Income + dependents</td><td>Income per dependent (only if asked)</td><td>Total income &divide; number of dependents</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+<div class="resource-section" id="university">
+  <div class="section-label">University &amp; Application Guidance</div>
+  <h2 class="resource-heading">University &amp; Application Guidance</h2>
+  <div class="guide-card" id="choosing-university">
+    <h3 class="guide-title">Choosing the Right University or Program</h3>
+    <p class="story-text">I didn&rsquo;t choose my path in a straight line &mdash; I started at Egerton University, and later moved to ALU Kigali through the Mastercard Foundation Scholarship. Both were real, valid choices at different points in my journey.</p>
+    <ol class="guide-list">
+      <li><strong>Start with the problem you want to solve, not the prestige of the name.</strong> Ask &ldquo;which program actually teaches me what I need to solve the problem I care about?&rdquo; not &ldquo;which university has the best reputation?&rdquo;</li>
+      <li><strong>Look at what graduates actually do, not just what the brochure promises.</strong> Look at where recent graduates ended up &mdash; their LinkedIn profiles, alumni networks, actual outcomes.</li>
+      <li><strong>Understand the real cost, not just the tuition sticker price.</strong> Factor in cost of living, whether a scholarship covers full or partial tuition, travel costs, and whether you&rsquo;ll need to work alongside studying.</li>
+      <li><strong>Consider the environment you&rsquo;ll actually learn in.</strong> Some people thrive in large, anonymous lecture halls with total independence. Others need smaller cohorts, closer mentorship, and more structure.</li>
+      <li><strong>Don&rsquo;t be afraid to change direction.</strong> I started at Egerton University. That wasn&rsquo;t a mistake &mdash; it was the right decision with the information I had at the time. Your first choice doesn&rsquo;t have to be your only choice.</li>
+      <li><strong>Ask what happens if things don&rsquo;t go as planned.</strong> Understand the transfer policy and what support exists if you&rsquo;re struggling academically or financially before committing.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="resource-section" id="career">
+  <div class="section-label">Career &amp; Job Readiness</div>
+  <h2 class="resource-heading">Career &amp; Job Readiness</h2>
+  <div class="guide-card" id="internships-jobs">
+    <h3 class="guide-title">Finding Internships &amp; Entry-Level Roles in Africa</h3>
+    <p class="story-text">Finding your first real opportunity is different from finding a scholarship &mdash; there&rsquo;s less formal infrastructure, more scams, and a lot of &ldquo;internships&rdquo; that are really unpaid labor with no real learning attached. Here&rsquo;s how to find ones actually worth your time.</p>
+    <ol class="guide-list">
+      <li><strong>Target companies, not just job boards.</strong> Identify 15-20 companies or organizations you&rsquo;d genuinely want to work with and check their own careers pages directly, or follow them on LinkedIn where openings often get posted first.</li>
+      <li><strong>Use your existing network before strangers.</strong> Most real opportunities come through someone who already knows your work. Before applying cold, ask: is there anyone in my existing network connected to this organization?</li>
+      <li><strong>Know the difference between a real internship and unpaid exploitation.</strong> A legitimate internship should offer actual mentorship or supervision, clear learning objectives, and either payment, a stipend, or a genuinely strong, verifiable pathway to real opportunities afterward.</li>
+      <li><strong>Build something before you&rsquo;re asked to.</strong> The fastest way to stand out with no formal experience is to have already built something relevant &mdash; a small project, a website, a community initiative &mdash; even without being asked.</li>
+      <li><strong>Apply even when you don&rsquo;t meet every requirement.</strong> Many young Africans self-eliminate from postings that list &ldquo;2 years experience required&rdquo; &mdash; often written more as a wish list than a hard filter.</li>
+      <li><strong>Treat every internship as an audition for a longer relationship.</strong> Many people get hired permanently, or referred to a next opportunity, specifically because of how they performed in a short internship.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="resource-section" id="ai-skills">
+  <div class="section-label">AI-Era Skills</div>
+  <h2 class="resource-heading">AI-Era Skills</h2>
+  <div class="guide-card" id="ai-without-losing-skill">
+    <h3 class="guide-title">Using AI Tools Without Losing Real Skill</h3>
+    <p class="story-text">This is the guide I care about most, because it&rsquo;s the exact problem Jua Institute was built to solve. AI can write your essay, debug your code, and answer your exam question in seconds. That&rsquo;s not the danger. The danger is what happens when you stop noticing the difference between getting an answer and understanding one.</p>
+    <ol class="guide-list">
+      <li><strong>Use AI to check your thinking, not replace it.</strong> Before you ask AI to solve something, attempt it yourself first &mdash; even badly. Then use AI to check your answer, find your mistake, or explain the part you got stuck on.</li>
+      <li><strong>Ask &ldquo;why,&rdquo; not just &ldquo;what.&rdquo;</strong> If AI gives you a solution, don&rsquo;t just copy it &mdash; ask it to explain why that approach works, and then explain it back in your own words without looking. If you can&rsquo;t explain it without the AI in front of you, you don&rsquo;t actually know it yet.</li>
+      <li><strong>Treat AI output as a draft, never a final answer.</strong> Reviewing and correcting AI output is itself a skill-building exercise &mdash; you&rsquo;re forced to understand the material well enough to catch what&rsquo;s wrong with it.</li>
+      <li><strong>Practice in environments where shortcuts don&rsquo;t work.</strong> Seek out real practice &mdash; coding sandboxes, timed exercises, oral explanations to another person &mdash; where you can&rsquo;t paste an AI answer even if you wanted to. This is the entire idea behind Jua Institute.</li>
+      <li><strong>Notice the moment you stop being able to explain your own work.</strong> If someone asks you to explain a project, an essay, or a piece of code you submitted, and you can&rsquo;t walk them through it confidently, that&rsquo;s a sign the skill was never really yours.</li>
+      <li><strong>Remember what AI actually is: leverage, not a replacement.</strong> Every powerful tool multiplies what you already know &mdash; it doesn&rsquo;t create knowledge you don&rsquo;t have. Used well, AI should make your real skill go further, not stand in for the fact that you never built it.</li>
+    </ol>
+    <div class="callout-box">
+      <p>This guide is the philosophy behind <strong>Jua Institute</strong> &mdash; visit <a href="https://jua-institute-web.reaganayiecho.workers.dev/" target="_blank">jua-institute-web.reaganayiecho.workers.dev</a> to see it in practice.</p>
+    </div>
+  </div>
+</div>
+
+<div class="cta">
+  <h2>Have a Question?</h2>
+  <p>These guides are free for anyone who needs them. If you want to talk through your specific situation, reach out.</p>
+  <div class="cta-btns">
+    <a href="contact.html" class="btn-primary">Get In Touch</a>
+  </div>
+</div>
+
+<div class="social-strip">
+  <div class="social-strip-inner">
+    <a href="https://www.linkedin.com/in/reganayiecho" target="_blank" class="social-link">
+      <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+    <a href="https://github.com/rayiecho" target="_blank" class="social-link">
+      <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>GitHub</a>
+    <a href="https://x.com/REGAN_AYIECHO" target="_blank" class="social-link">
+      <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X (Twitter)</a>
+    <a href="https://www.youtube.com/@Prof.AyiechoRegan" target="_blank" class="social-link">
+      <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>YouTube</a>
+    <a href="https://www.tiktok.com/@reganayiecho" target="_blank" class="social-link">
+      <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>TikTok</a>
+    <a href="mailto:odhiamboregan6440@gmail.com" class="social-link">
+      <svg viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>Email</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Regan Ayiecho</div>
+      <div class="footer-tagline">Recovering skills. Speaking languages. Building Africa&rsquo;s own systems.</div>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Regan Odhiambo Ayiecho &middot; All rights reserved</span>
+    <span>Built with purpose &middot; Powered by persistence</span>
+  </div>
+</footer>
+
+</body>
+</html>
