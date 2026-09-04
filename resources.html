@@ -140,9 +140,9 @@
 
     @media(max-width:1024px){.resource-table{min-width:0;}}
     @media(max-width:768px){nav{padding:1rem 1.5rem;}.nav-links,.nav-cta{display:none;}.nav-hamburger{display:flex;}.resource-section,.cta{padding:4rem 1.5rem;}.category-nav{padding:1.25rem 1.5rem;}.footer-inner{grid-template-columns:1fr;}.guide-title{font-size:1.4rem;}
-    .nav-links{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(5,15,8,0.98);flex-direction:column;align-items:center;justify-content:flex-start;gap:1.5rem;z-index:150;overflow-y:auto;padding:6rem 1.5rem 3rem;}
+    .nav-backdrop{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.55);z-index:150;}.nav-links{position:fixed;top:0;left:0;bottom:0;width:min(300px,78vw);background:rgba(5,15,8,0.98);flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:0.25rem;z-index:160;overflow-y:auto;padding:6rem 2rem 2rem;box-shadow:6px 0 30px rgba(0,0,0,0.4);}
     .nav-links.open{display:flex;}
-    .nav-links a{font-size:1.15rem;}
+    .nav-links a{font-size:1rem;padding:0.75rem 0;width:100%;border-bottom:1px solid rgba(255,255,255,0.08);}
     .nav-hamburger{position:relative;z-index:200;cursor:pointer;}
     .nav-hamburger span{transition:transform 0.25s ease,opacity 0.2s ease;}
     .nav-hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
@@ -489,6 +489,13 @@ Before me, Commissioner for Oaths / Notary Public: __________________
   var navLinksHome = navLinks.parentNode;
   var navLinksNextSibling = navLinks.nextSibling;
 
+  // Left-side drawer with a dimmed backdrop over the rest of the page
+  // (per Regan's reference design) -- not a full-screen takeover. Backdrop
+  // is created once and appended to body alongside navLinks while open.
+  var backdrop = document.createElement('div');
+  backdrop.className = 'nav-backdrop';
+  backdrop.setAttribute('aria-hidden', 'true');
+
   function closeMenu() {
     navLinks.classList.remove('open');
     hamburger.classList.remove('active');
@@ -497,8 +504,10 @@ Before me, Commissioner for Oaths / Notary Public: __________________
     if (navLinks.parentNode !== navLinksHome) {
       navLinksHome.insertBefore(navLinks, navLinksNextSibling);
     }
+    if (backdrop.parentNode) backdrop.parentNode.removeChild(backdrop);
   }
   function openMenu() {
+    document.body.appendChild(backdrop);
     document.body.appendChild(navLinks);
     navLinks.classList.add('open');
     hamburger.classList.add('active');
@@ -517,11 +526,7 @@ Before me, Commissioner for Oaths / Notary Public: __________________
   navLinks.querySelectorAll('a').forEach(function (a) {
     a.addEventListener('click', closeMenu);
   });
-  document.addEventListener('click', function (e) {
-    if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !hamburger.contains(e.target)) {
-      closeMenu();
-    }
-  });
+  backdrop.addEventListener('click', closeMenu);
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closeMenu();
   });
