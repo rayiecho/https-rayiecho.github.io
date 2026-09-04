@@ -605,6 +605,26 @@
       nav { padding: 1rem 1.5rem; }
       .nav-links, .nav-cta { display: none; }
       .nav-hamburger { display: flex; }
+      .nav-links {
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(5,15,8,0.98);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1.5rem;
+        z-index: 150;
+        overflow-y: auto;
+        padding: 6rem 1.5rem 3rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { font-size: 1.15rem; }
+      .nav-hamburger { position: relative; z-index: 200; cursor: pointer; }
+      .nav-hamburger span { transition: transform 0.25s ease, opacity 0.2s ease; }
+      .nav-hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      .nav-hamburger.active span:nth-child(2) { opacity: 0; }
+      .nav-hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+      body.nav-open { overflow: hidden; }
       .hero { padding: 6rem 1.5rem 3rem; }
       .about-highlights { grid-template-columns: 1fr; }
       .impact-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
@@ -631,7 +651,7 @@
     <li><a href="media.html">Media</a></li>
   </ul>
   <a href="contact.html" class="nav-cta">Hire Me</a>
-  <div class="nav-hamburger" onclick="document.querySelector('.nav-links').style.display='flex';document.querySelector('.nav-links').style.flexDirection='column';document.querySelector('.nav-links').style.position='fixed';document.querySelector('.nav-links').style.top='64px';document.querySelector('.nav-links').style.left='0';document.querySelector('.nav-links').style.right='0';document.querySelector('.nav-links').style.background='rgba(13,8,6,0.98)';document.querySelector('.nav-links').style.padding='2rem';document.querySelector('.nav-links').style.gap='1.5rem';">
+  <div class="nav-hamburger" id="nav-hamburger" role="button" tabindex="0" aria-label="Toggle menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </div>
 </nav>
@@ -934,6 +954,50 @@
     <span>Built with purpose &middot; Powered by persistence</span>
   </div>
 </footer>
+
+<script>
+(function () {
+  var hamburger = document.getElementById('nav-hamburger');
+  var navLinks = document.querySelector('.nav-links');
+  if (!hamburger || !navLinks) return;
+
+  function closeMenu() {
+    navLinks.classList.remove('open');
+    hamburger.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('nav-open');
+  }
+  function openMenu() {
+    navLinks.classList.add('open');
+    hamburger.classList.add('active');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('nav-open');
+  }
+  function toggleMenu() {
+    if (navLinks.classList.contains('open')) closeMenu();
+    else openMenu();
+  }
+
+  hamburger.addEventListener('click', toggleMenu);
+  hamburger.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(); }
+  });
+  navLinks.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', closeMenu);
+  });
+  document.addEventListener('click', function (e) {
+    if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+      closeMenu();
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeMenu();
+  });
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 768) closeMenu();
+  });
+})();
+</script>
 
 <script src="https://rayiecho-backend.reaganayiecho.workers.dev/widget/chat-widget.js" defer></script>
 </body>
