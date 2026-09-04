@@ -82,7 +82,7 @@
 
     /* NAV */
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 300;
       padding: 1.25rem 3rem;
       display: flex; justify-content: space-between; align-items: center;
       background: rgba(5,15,8,0.98);
@@ -961,13 +961,26 @@
   var navLinks = document.querySelector('.nav-links');
   if (!hamburger || !navLinks) return;
 
+  // nav has backdrop-filter, which establishes a new containing block for
+  // position:fixed descendants -- confirmed via testing that without this,
+  // the "fixed" full-screen menu was actually sized/positioned relative to
+  // the nav bar itself (collapsing to ~144px), not the real viewport. Fix:
+  // move navLinks to be a direct child of body while open, then move it
+  // back to its original spot in nav when closed (needed for desktop layout).
+  var navLinksHome = navLinks.parentNode;
+  var navLinksNextSibling = navLinks.nextSibling;
+
   function closeMenu() {
     navLinks.classList.remove('open');
     hamburger.classList.remove('active');
     hamburger.setAttribute('aria-expanded', 'false');
     document.body.classList.remove('nav-open');
+    if (navLinks.parentNode !== navLinksHome) {
+      navLinksHome.insertBefore(navLinks, navLinksNextSibling);
+    }
   }
   function openMenu() {
+    document.body.appendChild(navLinks);
     navLinks.classList.add('open');
     hamburger.classList.add('active');
     hamburger.setAttribute('aria-expanded', 'true');

@@ -13,7 +13,7 @@
     :root{--bg:#EDF4EE;--bg2:#DDEEDE;--bg3:#D4EAD6;--burgundy:#1B4332;--burgundy-light:#2D6A4F;--terracotta:#2E7D52;--terracotta-light:#52B788;--gold:#C0392B;--gold-light:#E74C3C;--cream:#0D1F0F;--cream2:#1A3320;--gray:#2E5035;--white:#FAFAF8;--border:rgba(46,125,82,0.2);--border2:rgba(46,125,82,0.08);}
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
     body{font-family:'Outfit',sans-serif;background:#EDF4EE;color:var(--cream);overflow-x:hidden;}
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 3rem;display:flex;justify-content:space-between;align-items:center;background:rgba(5,15,8,0.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--border2);}
+    nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:1.25rem 3rem;display:flex;justify-content:space-between;align-items:center;background:rgba(5,15,8,0.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--border2);}
     .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:700;color:var(--gold);letter-spacing:0.5px;text-decoration:none;}
     .nav-links{display:flex;gap:2.5rem;list-style:none;}
     .nav-links a{color:#FFFFFF;text-decoration:none;font-size:0.9rem;font-weight:600;letter-spacing:0.5px;transition:color 0.3s;}
@@ -469,13 +469,26 @@
   var navLinks = document.querySelector('.nav-links');
   if (!hamburger || !navLinks) return;
 
+  // nav has backdrop-filter, which establishes a new containing block for
+  // position:fixed descendants -- confirmed via testing that without this,
+  // the "fixed" full-screen menu was actually sized/positioned relative to
+  // the nav bar itself (collapsing to ~144px), not the real viewport. Fix:
+  // move navLinks to be a direct child of body while open, then move it
+  // back to its original spot in nav when closed (needed for desktop layout).
+  var navLinksHome = navLinks.parentNode;
+  var navLinksNextSibling = navLinks.nextSibling;
+
   function closeMenu() {
     navLinks.classList.remove('open');
     hamburger.classList.remove('active');
     hamburger.setAttribute('aria-expanded', 'false');
     document.body.classList.remove('nav-open');
+    if (navLinks.parentNode !== navLinksHome) {
+      navLinksHome.insertBefore(navLinks, navLinksNextSibling);
+    }
   }
   function openMenu() {
+    document.body.appendChild(navLinks);
     navLinks.classList.add('open');
     hamburger.classList.add('active');
     hamburger.setAttribute('aria-expanded', 'true');
